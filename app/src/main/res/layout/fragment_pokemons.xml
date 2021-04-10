@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,8 +9,13 @@
         android:id="@+id/rv_pokemons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="16dp"
         android:clipToPadding="false"
-        android:paddingBottom="16dp" />
+        android:overScrollMode="never"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layoutManager="GridLayoutManager"
+        tools:itemCount="20"
+        tools:listitem="@layout/item_pokemon"
+        tools:spanCount="2" />
 
 </RelativeLayout>

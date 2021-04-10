@@ -1,4 +1,4 @@
-package me.tolkstudio.pokemonapp.mvp.model.navigation
+package me.tolkstudio.pokemonapp.mvp.navigation
 
 import com.github.terrakok.cicerone.Screen
 import me.tolkstudio.pokemonapp.mvp.model.entity.Pokemon

@@ -7,9 +7,9 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import ru.geekbrains.geekbrains_popular_libraries_kotlin.mvp.model.image.IImageLoader
+import me.tolkstudio.pokemonapp.mvp.model.image.IImageLoader
 
-class GlideImageLoader : IImageLoader<ImageView> {
+class GlideImageLoader() : IImageLoader<ImageView> {
 
     override fun load(url: String, container: ImageView) {
         Glide.with(container.context)
@@ -32,7 +32,6 @@ class GlideImageLoader : IImageLoader<ImageView> {
                     dataSource: DataSource?,
                     isFirstResource: Boolean
                 ): Boolean {
-                    //Можно сделать что-то с bitmap
                     return false
                 }
 

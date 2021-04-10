@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import me.tolkstudio.pokemonapp.databinding.ItemPokemonBinding
 import me.tolkstudio.pokemonapp.mvp.presenter.list.IPokemonListPresenter
 import me.tolkstudio.pokemonapp.mvp.view.list.PokemonItemView
-import ru.geekbrains.geekbrains_popular_libraries_kotlin.mvp.model.image.IImageLoader
+import me.tolkstudio.pokemonapp.mvp.model.image.IImageLoader
 
-class PokemonsRVAdapter(val presenter: IPokemonListPresenter, val imageLoader: IImageLoader<ImageView>) :
+class PokemonsRVAdapter(
+    val presenter: IPokemonListPresenter,
+    val imageLoader: IImageLoader<ImageView>
+) :
     RecyclerView.Adapter<PokemonsRVAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -31,16 +34,14 @@ class PokemonsRVAdapter(val presenter: IPokemonListPresenter, val imageLoader: I
     inner class ViewHolder(val vb: ItemPokemonBinding) : RecyclerView.ViewHolder(vb.root),
         PokemonItemView {
 
-        override fun setName(text: String)= with(vb) {
+        override fun setName(text: String) = with(vb) {
             pokemonName.text = text
         }
 
-        override fun loadAvatar(url: String)  = with(vb) {
+        override fun loadAvatar(url: String) = with(vb) {
             imageLoader.load(url, ivAvatar)
         }
 
         override var pos = -1
-
-
     }
 }
